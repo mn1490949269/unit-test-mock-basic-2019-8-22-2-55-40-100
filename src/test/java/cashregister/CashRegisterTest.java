@@ -43,8 +43,12 @@ public class CashRegisterTest {
     @Test
     public void should_print_the_stub_purchase_when_call_process() {
         //given
+    	StubPurchase stubPurchase = new StubPurchase();
+    	
         //when
+    	cashRegister.process(stubPurchase);
         //then
+    	assertEquals("food\t3.0\n", mockPrinter.getTextString());
     }
 
     @Test
